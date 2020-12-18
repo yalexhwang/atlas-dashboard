@@ -1,17 +1,21 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <router-view />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import FetchService from '@/services/FetchService'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+  },
+  async created () {
+    const url = `${process.env.VUE_APP_ATLAS_API_URL}/trades`
+    const data = await FetchService.get(url)
+    console.log(data)
   }
 }
 </script>
