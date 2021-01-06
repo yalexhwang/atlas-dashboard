@@ -1,4 +1,4 @@
-# atlas-ui
+# Atlas Dashboard
 
 ## Project setup
 ```
